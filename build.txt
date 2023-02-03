@@ -1,0 +1,3 @@
+displayName = Ottomania
+author = Mehmet Mert Gunduz & Abdullah Unlu
+version = 0.1
