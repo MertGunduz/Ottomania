@@ -4,6 +4,13 @@ namespace Ottomania.Items.Materials
 {
 	public class BlackPepper : ModItem
 	{
+
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Black Pepper");
+			Tooltip.SetDefault("Fresh grinded black pepper, might make you sneeze");
+		}
+		
 		public override void SetDefaults()
 		{
 			item.width = 30;
@@ -11,12 +18,6 @@ namespace Ottomania.Items.Materials
 			item.maxStack = 99;
 			item.value = 1000;
 			item.rare = 2;
-		}
-
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Black Pepper");
-			Tooltip.SetDefault("Fresh grinded black pepper, might make you sneeze");
 		}
 	}
 }
