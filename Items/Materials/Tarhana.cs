@@ -2,14 +2,15 @@ using Terraria.ModLoader;
 
 namespace Ottomania.Items.Materials
 {
-	public class RedPepper : ModItem
+	public class Tarhana : ModItem
 	{
+
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Red Pepper");
-			Tooltip.SetDefault("Fresh grinded red pepper flakes, very hot");
+			DisplayName.SetDefault("Tarhana");
+			Tooltip.SetDefault("Freshly made, coming from a small village in middle anatolia region");
 		}
-
+		
 		public override void SetDefaults()
 		{
 			Item.width = 30;

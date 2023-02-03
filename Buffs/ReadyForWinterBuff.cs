@@ -6,7 +6,7 @@ namespace Ottomania.Buffs
 {
 	public class ReadyForWinterBuff : ModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Ready For Winter");
 			Description.SetDefault("Melee power increased and immunity increased");
@@ -14,8 +14,8 @@ namespace Ottomania.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.meleeDamage += 0.35f;
-			player.meleeCrit += 3.5f;
+			player.GetDamage(DamageClass.Melee) += 0.35f;
+			player.GetCritChance(DamageClass.Melee) += 5.5f;
 			player.moveSpeed += 0.25f;
 
             player.buffImmune[44] = true;

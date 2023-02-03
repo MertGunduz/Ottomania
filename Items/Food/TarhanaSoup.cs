@@ -3,6 +3,9 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+using Ottomania.Buffs;
+using Ottomania.Items.Materials;
 
 namespace Ottomania.Items.Food
 {
@@ -21,33 +24,32 @@ namespace Ottomania.Items.Food
 		{
             Item.width = 30;
 			Item.height = 26;
-	        item.maxStack = 20;
-			item.rare = 1;
-			item.useAnimation = 15;
-			item.useTime = 15;
-			item.useStyle = 2;
-			item.UseSound = SoundID.Item3;
-			item.consumable = true;
+	        Item.maxStack = 20;
+			Item.rare = 1;
+			Item.useAnimation = 15;
+			Item.useTime = 15;
+			Item.useStyle = 2;
+			Item.UseSound = SoundID.Item3;
+			Item.consumable = true;
 		}
 
-        public override bool UseItem(Player player)
+        public override bool? UseItem(Player player)
 		{
-			player.AddBuff(mod.BuffType("ReadyForWinterBuff"), 360);
+            player.AddBuff(BuffType<ReadyForWinterBuff>(), 600, true);
 			return true;
 		}
 
         public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "Tarhana", 3);
-            recipe.AddIngredient(null, "Mint", 2);
-            recipe.AddIngredient(null, "TomatoPaste", 1);
-            recipe.AddIngredient(null, "BlackPepper", 1);
-            recipe.AddIngredient(null, "RedPepper", 1);
-            recipe.AddIngredient(null, "Salt", 1);
-			recipe.AddTile(TileID.CookingPot);
-            recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe(1)
+				.AddIngredient(ItemType<Tarhana>(), 1)
+				.AddIngredient(ItemType<Mint>(), 3)
+				.AddIngredient(ItemType<TomatoPaste>(), 1)
+				.AddIngredient(ItemType<BlackPepper>(), 3)
+				.AddIngredient(ItemType<RedPepper>(), 1)
+				.AddIngredient(ItemType<Salt>(), 3)
+				.AddTile(TileID.CookingPots)
+				.Register();
 		}
     }
 }

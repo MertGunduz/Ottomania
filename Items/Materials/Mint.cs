@@ -12,11 +12,11 @@ namespace Ottomania.Items.Materials
 
 		public override void SetDefaults()
 		{
-			item.width = 30;
-			item.height = 30;
-			item.maxStack = 99;
-			item.value = 1000;
-			item.rare = 2;
+			Item.width = 30;
+			Item.height = 30;
+			Item.maxStack = 99;
+			Item.value = 1000;
+			Item.rare = 2;
 		}
 	}
 }
