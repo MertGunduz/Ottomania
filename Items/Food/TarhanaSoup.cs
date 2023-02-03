@@ -35,7 +35,7 @@ namespace Ottomania.Items.Food
 
         public override bool? UseItem(Player player)
 		{
-            player.AddBuff(BuffType<ReadyForWinterBuff>(), 600, true);
+            player.AddBuff(BuffType<ReadyForWinterBuff>(), 36000, true);
 			return true;
 		}
 
